@@ -1,0 +1,51 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Qualia
+providerId: qualia-title
+created: '2026-07-04'
+modified: '2026-07-04'
+reconciled: false
+tags:
+- Title Insurance
+- Escrow
+- Real Estate
+- PropTech
+- Rate Limiting
+- Quotas
+description: >-
+  Qualia states that its API includes rate limiting policies "to maintain system
+  stability," but it does not publish specific numeric per-account or
+  per-endpoint limits in its public material. Concrete limits, if any, are
+  disclosed inside Qualia's gated developer hub and governed per organization
+  through Qualia's authorization framework. No public figures are available to
+  reconcile.
+notes: >-
+  Numeric request-rate limits are not documented publicly as of the review date.
+  Access and throughput are provisioned per organization via capability gates
+  and Authorized Organizations. Verify limits in Qualia's developer hub during
+  reconciliation.
+sources:
+- https://www.qualia.com/qualia-api/
+- https://learn.qualia.com/api-u
+responseCodes:
+  throttled: 429
+limits:
+- name: API Requests
+  scope: account
+  metric: requests
+  limit: not published
+  notes: Qualia applies rate limiting policies but does not publish numeric per-account request limits.
+- name: Capability-Gated Access
+  scope: organization
+  metric: capabilities
+  limit: per authorization
+  notes: Access to data and operations is scoped per organization through capability gates and Authorized Organizations rather than a flat rate.
+policies:
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter and honor Retry-After on 429 responses.
+- name: Authorization Framework
+  description: Access is granted, scoped, and revoked per organization; integrations only reach the capabilities explicitly authorized for them.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

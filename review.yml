@@ -1,0 +1,86 @@
+aid: qualia-title
+name: Qualia
+review:
+  question: Does Qualia expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-04'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Qualia's public API is described as an
+    enterprise-grade GraphQL read-write API with push and pull capabilities,
+    accessed over HTTPS with HTTP authentication. No server-push transport
+    (WebSocket or SSE) is documented on Qualia's own API, and the concrete
+    schema lives behind a gated developer hub rather than in a public
+    specification. There is no public WebSocket surface to model.
+findings:
+  summary: |
+    Qualia does not publish a documented public WebSocket API. Qualia is a
+    digital real estate closing platform for the title, escrow, and settlement
+    industry. Its API is described publicly as an enterprise-grade, cloud-based
+    GraphQL read-write API with a developer hub and sandbox, offering "push and
+    pull" capabilities: placing and tracking title orders, sending and receiving
+    messages and documents, and pulling order, accounting, and contact data for
+    custom reporting and to connect accounting/CRM/BI systems. Access is
+    partner-gated behind a secure authorization framework - capability gates,
+    Authorized Organizations, HTTP authentication, and rate limiting - and is
+    provisioned per organization via a demo / contact-sales process. No public,
+    unauthenticated GraphQL endpoint URL, schema, or reference is published, and
+    no realtime bidirectional WebSocket (ws:// or wss://) endpoint is documented
+    anywhere in Qualia's public material.
+  accessModel: |
+    Gated. Qualia does not operate an open developer portal. The API pages
+    (qualia.com/qualia-api and learn.qualia.com/api-u) are marketing/learning
+    surfaces that direct developers to request a demo or call 855-441-5498. The
+    API Terms (qualia.com/api-terms) grant a limited license for integrating
+    with the Qualia Platform. The GraphQL schema, endpoint, and reference
+    documentation are exposed only inside the gated developer hub to authorized
+    organizations. The logical API areas in apis.yml are therefore modeled from
+    public product/press material, not from a public schema (endpointsModeled).
+  transports:
+    - protocol: GraphQL
+      scheme: https
+      documented: partial
+      note: Public material states the API is GraphQL (JSON, read-write, push/pull) over HTTPS with HTTP authentication. Endpoint URL and schema are not public; they are in the gated developer hub.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in Qualia's public material as of the review date.
+  endpointsModeled: true
+  endpointsModeledNote: |
+    No public endpoint URLs or GraphQL schema are published. The six logical API
+    areas (Title Orders, Documents, Messages, Contacts/Parties,
+    Accounting/Escrow, Connect/Marketplace) are honestly modeled from Qualia's
+    public product and press descriptions of the API's push/pull capabilities.
+    No concrete queries, mutations, or endpoint paths were fabricated.
+sources:
+  - url: https://www.qualia.com/qualia-api/
+    type: Documentation
+    note: Primary API marketing page. GraphQL read-write API; capability gates, Authorized Organizations, HTTP auth, rate limiting; directs to demo / 855-441-5498.
+  - url: https://learn.qualia.com/api-u
+    type: LearningResources
+    note: Qualia API University learning page; GraphQL API for reporting and connecting accounting/CRM/BI; no public endpoint or schema.
+  - url: https://www.qualia.com/press-releases/qualia-launches-api-for-companies-to-scale-digital-title-capabilities/
+    type: PressRelease
+    note: 2022 launch of the API. Push and pull capabilities; access to order, accounting, and contact data; national network of title agents via Connect.
+  - url: https://www.qualia.com/api-terms/
+    type: TermsOfService
+    note: Limited, non-exclusive license to use the API for integrating with the Qualia Platform. No technical endpoint/schema detail; Texas law; liability capped at $500.
+  - url: https://www.qualia.com/connect-for-title-and-escrow/
+    type: Documentation
+    note: Qualia Connect and Marketplace - secure bi-directional data exchange; national network of independent title agents and vendors.
+  - url: https://www.qualia.com/integrations/
+    type: Integrations
+    note: Integrations directory for the Qualia platform.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and Qualia's own public API is a
+    GraphQL request/response interface accessed over HTTPS, gated behind an
+    authorization framework. No AsyncAPI document was created because there is
+    no documented server-push transport on Qualia's API to model, and no public
+    schema exists to derive one from.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

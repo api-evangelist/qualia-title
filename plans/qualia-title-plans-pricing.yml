@@ -1,0 +1,65 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Qualia
+providerId: qualia-title
+created: '2026-07-04'
+modified: '2026-07-04'
+reconciled: false
+tags:
+- Title Insurance
+- Escrow
+- Real Estate
+- Closing
+- PropTech
+- Plans
+description: >-
+  Qualia does not publish public, self-serve API pricing. The Qualia API is sold
+  as part of Qualia's platform under a capability-based, contact-sales model:
+  prospective customers request a demo or call Qualia's team, and access is
+  provisioned per organization behind a secure authorization framework. Qualia
+  describes the API as something customers "only need to purchase the
+  capabilities to meet their business objectives" for - i.e. access is granted
+  through capability gates rather than a flat published price. Exact figures are
+  not public and are not reconciled here.
+notes: >-
+  Pricing and packaging are quoted directly by Qualia (855-441-5498 or a
+  requested demo). Capability gates and Authorized Organizations control which
+  data and operations an integration can reach. Verify current commercial terms
+  with Qualia during reconciliation.
+sources:
+- https://www.qualia.com/qualia-api/
+- https://learn.qualia.com/api-u
+- https://www.qualia.com/press-releases/qualia-launches-api-for-companies-to-scale-digital-title-capabilities/
+- https://www.qualia.com/api-terms/
+plans:
+- id: qualia-api-capability
+  name: Qualia API (Capability-Based)
+  type: enterprise
+  description: >-
+    Partner/enterprise access to the Qualia GraphQL API, provisioned per
+    organization. Customers purchase the specific capabilities (order
+    placement/tracking, documents, messages, contacts, accounting/reporting,
+    Connect/Marketplace) that meet their business objectives, gated by Qualia's
+    authorization framework. Includes a developer hub and sandbox for building
+    and testing integrations.
+  entries:
+  - label: Platform Agreement
+    name: platform_agreement
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: US
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: GraphQL Read-Write API
+  - name: Capability Gates
+  - name: Authorized Organizations
+  - name: Developer Hub and Sandbox
+  - name: Push and Pull Data Exchange
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
