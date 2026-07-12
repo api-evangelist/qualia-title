@@ -128,6 +128,12 @@ apis:
     internal title operations place and route orders digitally. Modeled from
     Qualia's Connect / Marketplace product material. endpointsModeled.
 common:
+- type: TrustCenter
+  url: security/qualia-title-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/qualia-title-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/qualia-title-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/qualiasoftware
 - type: Website
