@@ -2,154 +2,137 @@ aid: qualia-title
 url: https://raw.githubusercontent.com/api-evangelist/qualia-title/refs/heads/main/apis.yml
 name: Qualia
 kind: company
-description: Qualia is a digital real estate closing platform for the title, escrow,
-  and settlement industry, connecting title agents, lenders, real estate agents, and
-  homebuyers on a single system for managing closings end to end. The Qualia API is
-  an enterprise-grade, cloud-based GraphQL read-write API with a developer hub and
-  sandbox. It lets real estate businesses and PropTech companies place and track
-  title orders, send and receive messages and documents, and pull order, accounting,
-  and contact data for custom reporting and to connect accounting, CRM, and BI
-  systems. Access is partner-gated behind a secure authorization framework
-  (capability gates, authorized organizations, HTTP authentication, and rate
-  limiting); Qualia does not publish an open, unauthenticated developer portal, so
-  the API areas below are modeled from Qualia's public product and press material
-  rather than from a public GraphQL schema.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+description: Qualia is a digital real estate closing platform for the title, escrow, and settlement industry, connecting title agents, lenders, real estate agents, and homebuyers on a single system for managing closings end to end. The Qualia API is an enterprise-grade, cloud-based GraphQL read-write API with a developer hub and sandbox. It lets real estate businesses and PropTech companies place and track title orders, send and receive messages and documents, and pull order, accounting, and contact data for custom reporting and to connect accounting, CRM, and BI systems. Access is partner-gated behind a secure authorization framework (capability gates, authorized organizations, HTTP authentication, and rate limiting); Qualia does not publish an open, unauthenticated developer portal, so the API areas below are modeled from Qualia's public product and press material rather than from a public GraphQL schema.
+accessModel:
+  pricing: enterprise
+  onboarding: approval
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise · Requires approval
+  confidence: medium
+  source:
+    - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/qualia-title.png
 tags:
-- Title Insurance
-- Escrow
-- Real Estate
-- Closing
-- Settlement
-- PropTech
-- GraphQL
+  - Title Insurance
+  - Escrow
+  - Real Estate
+  - Closing
+  - Settlement
+  - PropTech
+  - GraphQL
 created: '2026-07-04'
-modified: '2026-07-04'
+modified: '2026-07-25'
 specificationVersion: '0.19'
 apis:
-- aid: qualia-title:qualia-title-orders-api
-  name: Qualia Title Orders API
-  tags:
-  - Orders
-  - Title
-  - Closings
-  - Modeled
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.qualia.com/qualia-api/
-  properties:
-  - url: https://www.qualia.com/qualia-api/
-    type: Documentation
-  - url: https://learn.qualia.com/api-u
-    type: LearningResources
-  description: Place title and escrow orders programmatically (into Qualia Core or
-    to third-party systems) and track their status through the closing lifecycle.
-    Modeled from Qualia's public description of push/pull order capabilities; the
-    concrete GraphQL mutations and queries are documented in Qualia's gated
-    developer hub. endpointsModeled.
-- aid: qualia-title:qualia-title-documents-api
-  name: Qualia Documents API
-  tags:
-  - Documents
-  - Files
-  - eSign
-  - Modeled
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.qualia.com/qualia-api/
-  properties:
-  - url: https://www.qualia.com/qualia-api/
-    type: Documentation
-  description: Send and receive closing documents attached to an order - upload,
-    retrieve, and share files across the parties on a file. Modeled from Qualia's
-    stated document exchange capability; concrete operations live in the gated
-    developer hub. endpointsModeled.
-- aid: qualia-title:qualia-title-messages-api
-  name: Qualia Messages API
-  tags:
-  - Messages
-  - Communication
-  - Connect
-  - Modeled
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.qualia.com/qualia-api/
-  properties:
-  - url: https://www.qualia.com/qualia-api/
-    type: Documentation
-  description: Send and receive messages tied to an order or transaction, powering
-    client communication and status notifications alongside Qualia Connect. Modeled
-    from Qualia's public messaging capability. endpointsModeled.
-- aid: qualia-title:qualia-title-contacts-api
-  name: Qualia Contacts and Parties API
-  tags:
-  - Contacts
-  - Parties
-  - CRM
-  - Modeled
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.qualia.com/qualia-api/
-  properties:
-  - url: https://www.qualia.com/qualia-api/
-    type: Documentation
-  description: Pull contact and party data for the files on an account - the people
-    and organizations attached to a closing - to sync with CRM systems and build
-    custom notifications. Modeled from Qualia's stated contact-data access.
-    endpointsModeled.
-- aid: qualia-title:qualia-title-accounting-api
-  name: Qualia Accounting and Escrow API
-  tags:
-  - Accounting
-  - Escrow
-  - Reporting
-  - Modeled
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.qualia.com/qualia-api/
-  properties:
-  - url: https://www.qualia.com/qualia-api/
-    type: Documentation
-  description: Pull accounting and escrow data across files for custom reporting and
-    executive-level performance dashboards, and to connect Qualia to accounting
-    platforms (e.g. NetSuite) and BI tools. Modeled from Qualia's stated
-    order/accounting data access. endpointsModeled.
-- aid: qualia-title:qualia-title-marketplace-api
-  name: Qualia Connect and Marketplace API
-  tags:
-  - Marketplace
-  - Connect
-  - Vendors
-  - Modeled
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.qualia.com/connect-for-title-and-escrow/
-  properties:
-  - url: https://www.qualia.com/connect-for-title-and-escrow/
-    type: Documentation
-  - url: https://www.qualia.com/integrations/
-    type: Integrations
-  description: Programmatic access to Qualia's national network of technology-enabled
-    independent title agents and Marketplace vendors, letting businesses without
-    internal title operations place and route orders digitally. Modeled from
-    Qualia's Connect / Marketplace product material. endpointsModeled.
+  - aid: qualia-title:qualia-title-orders-api
+    name: Qualia Title Orders API
+    tags:
+      - Orders
+      - Title
+      - Closings
+      - Modeled
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+    humanURL: https://www.qualia.com/qualia-api/
+    properties:
+      - url: https://www.qualia.com/qualia-api/
+        type: Documentation
+      - url: https://learn.qualia.com/api-u
+        type: LearningResources
+    description: Place title and escrow orders programmatically (into Qualia Core or to third-party systems) and track their status through the closing lifecycle. Modeled from Qualia's public description of push/pull order capabilities; the concrete GraphQL mutations and queries are documented in Qualia's gated developer hub. endpointsModeled.
+  - aid: qualia-title:qualia-title-documents-api
+    name: Qualia Documents API
+    tags:
+      - Documents
+      - Files
+      - eSign
+      - Modeled
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+    humanURL: https://www.qualia.com/qualia-api/
+    properties:
+      - url: https://www.qualia.com/qualia-api/
+        type: Documentation
+    description: Send and receive closing documents attached to an order - upload, retrieve, and share files across the parties on a file. Modeled from Qualia's stated document exchange capability; concrete operations live in the gated developer hub. endpointsModeled.
+  - aid: qualia-title:qualia-title-messages-api
+    name: Qualia Messages API
+    tags:
+      - Messages
+      - Communication
+      - Connect
+      - Modeled
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+    humanURL: https://www.qualia.com/qualia-api/
+    properties:
+      - url: https://www.qualia.com/qualia-api/
+        type: Documentation
+    description: Send and receive messages tied to an order or transaction, powering client communication and status notifications alongside Qualia Connect. Modeled from Qualia's public messaging capability. endpointsModeled.
+  - aid: qualia-title:qualia-title-contacts-api
+    name: Qualia Contacts and Parties API
+    tags:
+      - Contacts
+      - Parties
+      - CRM
+      - Modeled
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+    humanURL: https://www.qualia.com/qualia-api/
+    properties:
+      - url: https://www.qualia.com/qualia-api/
+        type: Documentation
+    description: Pull contact and party data for the files on an account - the people and organizations attached to a closing - to sync with CRM systems and build custom notifications. Modeled from Qualia's stated contact-data access. endpointsModeled.
+  - aid: qualia-title:qualia-title-accounting-api
+    name: Qualia Accounting and Escrow API
+    tags:
+      - Accounting
+      - Escrow
+      - Reporting
+      - Modeled
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+    humanURL: https://www.qualia.com/qualia-api/
+    properties:
+      - url: https://www.qualia.com/qualia-api/
+        type: Documentation
+    description: Pull accounting and escrow data across files for custom reporting and executive-level performance dashboards, and to connect Qualia to accounting platforms (e.g. NetSuite) and BI tools. Modeled from Qualia's stated order/accounting data access. endpointsModeled.
+  - aid: qualia-title:qualia-title-marketplace-api
+    name: Qualia Connect and Marketplace API
+    tags:
+      - Marketplace
+      - Connect
+      - Vendors
+      - Modeled
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+    humanURL: https://www.qualia.com/connect-for-title-and-escrow/
+    properties:
+      - url: https://www.qualia.com/connect-for-title-and-escrow/
+        type: Documentation
+      - url: https://www.qualia.com/integrations/
+        type: Integrations
+    description: Programmatic access to Qualia's national network of technology-enabled independent title agents and Marketplace vendors, letting businesses without internal title operations place and route orders digitally. Modeled from Qualia's Connect / Marketplace product material. endpointsModeled.
 common:
-- type: TrustCenter
-  url: security/qualia-title-trust-center.yml
-- type: VulnerabilityDisclosure
-  url: security/qualia-title-vulnerability-disclosure.yml
-- type: DomainSecurity
-  url: security/qualia-title-domain-security.yml
-- type: LinkedIn
-  url: https://www.linkedin.com/company/qualiasoftware
-- type: Website
-  url: https://www.qualia.com
-- type: Documentation
-  url: https://www.qualia.com/qualia-api/
-- type: LearningResources
-  url: https://learn.qualia.com/api-u
-- type: TermsOfService
-  url: https://www.qualia.com/api-terms/
-- type: Plans
-  url: plans/qualia-title-plans-pricing.yml
-- type: RateLimits
-  url: rate-limits/qualia-title-rate-limits.yml
-- type: Blog
-  url: https://blog.qualia.com/
+  - type: TrustCenter
+    url: security/qualia-title-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/qualia-title-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/qualia-title-domain-security.yml
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/qualiasoftware
+  - type: Website
+    url: https://www.qualia.com
+  - type: Documentation
+    url: https://www.qualia.com/qualia-api/
+  - type: LearningResources
+    url: https://learn.qualia.com/api-u
+  - type: TermsOfService
+    url: https://www.qualia.com/api-terms/
+  - type: Plans
+    url: plans/qualia-title-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/qualia-title-rate-limits.yml
+  - type: Blog
+    url: https://blog.qualia.com/
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
