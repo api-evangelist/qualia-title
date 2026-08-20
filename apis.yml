@@ -19,6 +19,14 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/qualia-tit
 tags:
   - Title Insurance
   - Escrow
+  - Real-Estate
+  - Closing
+  - Settlement
+  - PropTech
+  - GraphQL
+tags_raw:
+  - Title Insurance
+  - Escrow
   - Real Estate
   - Closing
   - Settlement
@@ -31,6 +39,11 @@ apis:
   - aid: qualia-title:qualia-title-orders-api
     name: Qualia Title Orders API
     tags:
+      - Order
+      - Title
+      - Closings
+      - Modeled
+    tags_raw:
       - Orders
       - Title
       - Closings
@@ -47,6 +60,11 @@ apis:
     name: Qualia Documents API
     tags:
       - Documents
+      - File
+      - eSign
+      - Modeled
+    tags_raw:
+      - Documents
       - Files
       - eSign
       - Modeled
@@ -59,6 +77,11 @@ apis:
   - aid: qualia-title:qualia-title-messages-api
     name: Qualia Messages API
     tags:
+      - Message
+      - Communications
+      - Connect
+      - Modeled
+    tags_raw:
       - Messages
       - Communication
       - Connect
