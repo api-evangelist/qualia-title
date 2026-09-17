@@ -52,11 +52,12 @@ tags_raw:
 - PropTech
 - GraphQL
 created: '2026-07-04'
-modified: '2026-07-25'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: qualia-title:qualia-title-orders-api
   name: Qualia Title Orders API
+  baseURL: https://api.qualia.com/graphql
   tags:
   - Order
   - Title
@@ -79,6 +80,7 @@ apis:
     the concrete GraphQL mutations and queries are documented in Qualia's gated developer hub. endpointsModeled.
 - aid: qualia-title:qualia-title-documents-api
   name: Qualia Documents API
+  baseURL: https://api.qualia.com/graphql
   tags:
   - Documents
   - File
@@ -99,6 +101,7 @@ apis:
     the gated developer hub. endpointsModeled.
 - aid: qualia-title:qualia-title-messages-api
   name: Qualia Messages API
+  baseURL: https://api.qualia.com/graphql
   tags:
   - Message
   - Communications
@@ -118,6 +121,7 @@ apis:
     notifications alongside Qualia Connect. Modeled from Qualia's public messaging capability. endpointsModeled.
 - aid: qualia-title:qualia-title-contacts-api
   name: Qualia Contacts and Parties API
+  baseURL: https://api.qualia.com/graphql
   tags:
   - Contacts
   - Parties
@@ -133,6 +137,7 @@ apis:
     access. endpointsModeled.
 - aid: qualia-title:qualia-title-accounting-api
   name: Qualia Accounting and Escrow API
+  baseURL: https://api.qualia.com/graphql
   tags:
   - Accounting
   - Escrow
@@ -148,6 +153,7 @@ apis:
     stated order/accounting data access. endpointsModeled.
 - aid: qualia-title:qualia-title-marketplace-api
   name: Qualia Connect and Marketplace API
+  baseURL: https://api.qualia.com/graphql
   tags:
   - Marketplace
   - Connect
@@ -165,6 +171,7 @@ apis:
     Modeled from Qualia's Connect / Marketplace product material. endpointsModeled.
 - aid: qualia-title:qualia-api
   name: Qualia API
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   description: The Qualia API is a read-write GraphQL API over the Qualia title, escrow and closing platform. It
     lets partner organizations place title orders into Qualia Core or Connect (or route them to third-party systems),
     send and receive messages and documents on an order, and pull order, accounting and contact data for custom
@@ -189,14 +196,12 @@ apis:
   - Messaging
   - Real Estate
   properties:
-  - type: GraphQL
-    url: graphql/qualia-graphql.yml
   - type: Authentication
-    url: authentication/qualia-authentication.yml
+    url: authentication/qualia-title-authentication.yml
   - type: Conventions
-    url: conventions/qualia-conventions.yml
+    url: conventions/qualia-title-conventions.yml
   - type: ErrorCatalog
-    url: errors/qualia-error-codes.yml
+    url: errors/qualia-title-error-codes.yml
   - type: TermsOfService
     url: https://www.qualia.com/api-terms/
 common:
@@ -224,6 +229,31 @@ common:
   url: https://blog.qualia.com/
 - type: GitHubOrganization
   url: https://github.com/qualialabs
+- type: Authentication
+  url: authentication/qualia-title-authentication.yml
+- type: WellKnown
+  url: well-known/qualia-title-well-known.yml
+- type: SecurityTxt
+  url: well-known/qualia-title-security.txt
+- type: Security
+  url: https://www.qualia.com/.well-known/security.txt
+- type: Compliance
+  url: https://www.qualia.com/trust/
+- type: Lifecycle
+  url: lifecycle/qualia-title-lifecycle.yml
+- type: StatusPage
+  url: https://status.qualia.com/
+- type: Deprecation
+  url: lifecycle/qualia-title-lifecycle.yml
+- type: LLMsTxt
+  url: llms/qualia-title-llms.txt
+- type: PrivacyPolicy
+  url: https://www.qualia.com/privacy-policy/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-16'
+  status: enriched
+  artifacts_added: 7
+  pass: local-v3
