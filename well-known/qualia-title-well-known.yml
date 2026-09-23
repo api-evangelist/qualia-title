@@ -1,0 +1,75 @@
+generated: '2026-09-16'
+method: probed
+source: anonymous GET of /.well-known/* on every known Qualia host, 2026-09-16
+note: Only www.qualia.com serves a real well-known document (security.txt). The file carries Expires 2026-09-15T18:00:00Z,
+  so it was one day past its stated validity when fetched. qualia.com 301-redirects to www.qualia.com;
+  api.qualia.com and learn.qualia.com return HTML 404 pages for every path.
+hosts:
+- host: www.qualia.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/plain
+    file: qualia-title-security.txt
+    expires: '2026-09-15T18:00:00Z'
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/mcp.json
+    status: 404
+- host: qualia.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    note: redirects to www.qualia.com
+  - path: /.well-known/openid-configuration
+    status: 301
+  - path: /.well-known/api-catalog
+    status: 301
+- host: api.qualia.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/mcp.json
+    status: 404
+- host: learn.qualia.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404

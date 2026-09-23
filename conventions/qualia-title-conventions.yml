@@ -1,0 +1,74 @@
+generated: '2026-09-16'
+method: searched
+source: >-
+  https://www.qualia.com/qualia-api/ (Key Features), https://www.qualia.com/api-terms/
+  (section 2.3 versions clause), and anonymous probes of https://api.qualia.com/graphql
+  on 2026-09-16.
+provider: Qualia
+providerId: qualia-title
+note: >-
+  Qualia publishes no open developer reference; the GraphQL schema and hub are
+  gated. Only conventions stated on public pages or observed on anonymous
+  responses are recorded here. Everything else is marked not published.
+interface:
+  style: GraphQL
+  endpoint: https://api.qualia.com/graphql
+  transport: HTTPS POST, JSON
+  server: Apollo Server on Express (x-powered-by Express; Apollo CSRF-prevention message on GET)
+  statement: >-
+    "The Qualia API uses a GraphQL interface with a JSON structure. This allows us
+    to create standards for data models, metering, error handling, and documentation."
+  introspection: gated (anonymous introspection returns 401 Authorization header is missing)
+  csrf_prevention: >-
+    Requests must carry a Content-Type other than form/text types (e.g.
+    application/json) or an x-apollo-operation-name / apollo-require-preflight
+    header; a bare GET returns 400 BAD_REQUEST with that instruction.
+authentication:
+  style: HTTP Basic (Authorization header), identifying the calling organization
+  profile: authentication/qualia-title-authentication.yml
+authorization:
+  style: capability gates + authorized organizations (per-organization grants)
+idempotency:
+  coverage: none
+  header: null
+  note: >-
+    No idempotency key or replay-protection mechanism is documented on Qualia's
+    public API material. The schema is gated, so a mechanism inside the developer
+    hub cannot be ruled out, but nothing is published.
+reversibility:
+  status: not-documented
+  write_surface: >-
+    The API is read-write (place title orders, send messages and documents), but
+    no cancel/void/undo operation or reversal window is publicly documented.
+  operations: []
+pagination:
+  style: not published
+field_selection:
+  style: GraphQL selection sets (native to the interface)
+request_tracing:
+  header: null
+  note: No request-id header observed on anonymous responses.
+versioning:
+  scheme: not published (single GraphQL endpoint, no version in the path)
+  support_window: >-
+    The API Terms prohibit using any version of the API Materials other than the
+    most current version, or (unless otherwise directed) a previous version
+    provided within the prior 12 month period.
+  source: https://www.qualia.com/api-terms/
+errors:
+  envelope: GraphQL errors array
+  shape: '{"errors":[{"message": string, "extensions": {"code": string}}]}'
+  http_status_used: true
+  catalog: errors/qualia-title-error-codes.yml
+rate_limits:
+  statement: >-
+    "We enforce policies in the backend around rate limits to maintain system
+    uptime, stability, and accessibility."
+  numeric_limits: not published
+  headers_observed: none on anonymous responses
+  profile: rate-limits/qualia-title-rate-limits.yml
+cors:
+  access_control_allow_origin: '*'
+security_headers:
+  strict_transport_security: max-age=63072000; includeSubDomains; preload
+lifecycle: lifecycle/qualia-title-lifecycle.yml

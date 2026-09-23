@@ -1,0 +1,65 @@
+generated: '2026-09-16'
+method: searched
+source: https://www.qualia.com/qualia-api/
+docs: https://www.qualia.com/qualia-api/
+provider: Qualia
+providerId: qualia-title
+note: >-
+  No OpenAPI or public GraphQL schema exists to derive security schemes from
+  (derive-authentication.py found none). This profile is taken from Qualia's
+  public API page, which states "Users are authenticated via a basic HTTP
+  authentication framework to identify the organization calling Qualia", and is
+  corroborated by anonymous probes of the live endpoint recorded under
+  x-evidence. Credentials are issued per organization through Qualia's gated
+  onboarding; no credential format or sandbox key prefix is published.
+summary:
+  types:
+  - http
+  http_schemes:
+  - basic
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  in: header
+  header: Authorization
+  identifies: calling organization
+  sources:
+  - https://www.qualia.com/qualia-api/
+authorization:
+  model: capability gates + authorized organizations
+  capability_gates: >-
+    The Qualia API is organized by capability gates, which provide access to
+    calls around an objective; customers purchase the capabilities they need.
+  authorized_organizations: >-
+    Granular controls to grant (or revoke) API access to owned or partner
+    organizations to retrieve data on behalf of the end consumer.
+  source: https://www.qualia.com/qualia-api/
+oauth2: false
+openid_connect: false
+scopes: none published (access is scoped by capability gates, not OAuth scopes)
+x-evidence:
+  endpoint: https://api.qualia.com/graphql
+  fetched: '2026-09-16'
+  probes:
+  - request: POST without Authorization header
+    http_status: 401
+    body: '{"errors":[{"message":"Authorization header is missing","extensions":{"code":"UNAUTHORIZED"}}]}'
+  - request: POST with Authorization Bearer <token>
+    http_status: 401
+    body: '{"errors":[{"message":"Authorization header is not properly formatted","extensions":{"code":"UNAUTHORIZED"}}]}'
+  - request: POST with Authorization Basic <invalid credentials>
+    http_status: 403
+    body: '{"errors":[{"message":"User is not authenticated","extensions":{"code":"FORBIDDEN"}}]}'
+  interpretation: >-
+    A Bearer header is rejected as malformed while a Basic header is parsed and
+    then rejected on credentials, confirming HTTP Basic is the accepted scheme.
+  well_known:
+  - url: https://api.qualia.com/.well-known/oauth-authorization-server
+    http_status: 404
+  - url: https://api.qualia.com/.well-known/oauth-protected-resource
+    http_status: 404
+  - url: https://api.qualia.com/.well-known/openid-configuration
+    http_status: 404

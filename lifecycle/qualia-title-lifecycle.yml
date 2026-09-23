@@ -1,0 +1,28 @@
+generated: '2026-09-16'
+method: searched
+source: https://status.qualia.com/ (Statuspage API components.json), https://www.qualia.com/api-terms/
+provider: Qualia
+providerId: qualia-title
+status_page: https://status.qualia.com/
+status_page_detail:
+  platform: Atlassian Statuspage
+  page_name: Qualia - Official
+  api_component: Qualia API
+  evidence: https://status.qualia.com/api/v2/components.json (HTTP 200, lists a "Qualia API" component)
+versioning:
+  scheme: not published
+  notes: Single GraphQL endpoint at https://api.qualia.com/graphql with no version segment.
+deprecation:
+  policy_url: https://www.qualia.com/api-terms/
+  support_window: >-
+    API Terms allow use of only the most current version, or (unless Qualia directs
+    otherwise) a previous version provided within the prior 12 month period.
+  sunset_header: null
+  notes: No public deprecation schedule or changelog; the 12-month clause is the only published version-support statement.
+changelog: null
+sla:
+  url: null
+  notes: >-
+    No public uptime SLA. The API Terms state Qualia does not warrant that the API
+    will function without interruption or error free.
+deprecated_operations: []
