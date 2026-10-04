@@ -38,7 +38,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/qualia-tit
 tags:
 - Title Insurance
 - Escrow
-- Real-Estate
+- Real Estate
 - Closing
 - Settlement
 - PropTech
@@ -51,6 +51,7 @@ tags_raw:
 - Settlement
 - PropTech
 - GraphQL
+- Real-Estate
 created: '2026-07-04'
 modified: '2026-09-16'
 specificationVersion: '0.23'
@@ -186,7 +187,7 @@ apis:
   - Order
   - Documents
   - Messaging
-  - Real-Estate
+  - Real Estate
   tags_raw:
   - Title
   - Escrow
@@ -195,6 +196,7 @@ apis:
   - Documents
   - Messaging
   - Real Estate
+  - Real-Estate
   properties:
   - type: Authentication
     url: authentication/qualia-title-authentication.yml
