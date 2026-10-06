@@ -53,7 +53,7 @@ tags_raw:
 - GraphQL
 - Real-Estate
 created: '2026-07-04'
-modified: '2026-09-16'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: qualia-title:qualia-title-orders-api
@@ -207,6 +207,8 @@ apis:
   - type: TermsOfService
     url: https://www.qualia.com/api-terms/
 common:
+- url: https://blog.qualia.com/feed/
+  type: BlogRSS
 - type: TrustCenter
   url: security/qualia-title-trust-center.yml
 - type: VulnerabilityDisclosure
