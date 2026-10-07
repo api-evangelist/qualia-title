@@ -207,6 +207,8 @@ apis:
   - type: TermsOfService
     url: https://www.qualia.com/api-terms/
 common:
+- type: Pricing
+  url: https://www.qualia.com/qualia-api/
 - url: https://blog.qualia.com/feed/
   type: BlogRSS
 - type: TrustCenter
